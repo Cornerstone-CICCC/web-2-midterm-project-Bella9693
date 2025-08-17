@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif+KR:wght@200..900&family=Oswald:wght@200..700&family=SUSE:wght@100..800&display=swap");
+
+/* ------------------------HEADER------------------------ */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-wrapper .logo {
+  width: 250px;
+}
+
+.header-menu {
+  background-color: var(--very-Dark-Blue-Top-BG-Pattern);
+  color: var(--white-Text);
+  border-radius: 5rem;
+  position: relative;
+  justify-self: center;
+}
+
+.header-menu ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.header-menu ul li {
+  height: 100%;
+  padding: 1rem 1.8rem;
+  width: 100%;
+  color: var(--dark-Grayish-Blue-Text);
+  cursor: pointer;
+  transition: color 300ms ease;
+}
+
+.header-menu ul li a {
+  font-family: "Noto", sans-serif;
+  color: var(--dark-Grayish-Blue-Text);
+}
+
+.header-menu ul li:hover {
+  color: var(--white-Text);
+}
+
+.header-menu ul li:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-Desaturated-Blue-Card-BG);
+  border-radius: 50%;
+  padding: 0.6rem;
+  margin-right: 5px;
+}
+
+.header-menu ul li svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 300ms ease;
+}
+
+.header-menu ul li:last-of-type:hover svg {
+  transform: scale(1.2);
+}
+
+.header-menu ul .active {
+  color: var(--white-Text);
+}
+
+.header-menu form {
+  display: none;
+  align-items: center;
+  justify-content: start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  padding-inline: 1.5rem;
+  background-color: var(--very-Dark-Blue-Top-BG-Pattern);
+}
+
+.header-menu form.show-search {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+  padding-inline: 1.5rem;
+  background-color: var(--very-Dark-Blue-Top-BG-Pattern);
+}
+
+.header-menu form input {
+  outline: none;
+  border: none;
+  background-color: var(--very-Dark-Blue-Top-BG-Pattern);
+  width: 100%;
+  color: var(--white-Text);
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+.header-menu form input[type="submit"] {
+  display: none;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--toggle);
+  width: 3.4rem;
+  height: 1.6rem;
+  border-radius: 1.2rem;
+}
+
+.slider::after {
+  content: "";
+  right: 4px;
+  position: absolute;
+  background-color: var(--white-BG);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 100%;
+  transition: right 300ms ease-in-out;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .slider::after {
+  right: calc(100% - 1.2rem - 4px);
+  background-color: var(--very-Dark-Blue-BG);
+}
+
+input[type="checkbox"]:checked ~ .slider {
+  background: var(--toggle-dark);
+}
+
+/* Home */
+.home-newmovie {
+  margin-top: 30px;
+}
+
+.home-newmovie .swiper {
+  width: 100%;
+  height: auto; /* 높이는 내용에 따라 자동 조절 */
+}
+
+.home-newmovie .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: auto; /* 슬라이드 높이는 이미지에 맞춤 */
+}
+
+.home-newmovie .swiper-slide img {
+  width: 100%; /* 슬라이드 안에서 꽉 차게 */
+  height: auto;
+  object-fit: cover; /* 비율 유지하며 영역 꽉 채움 */
+  border-radius: 20px;
+}
+
+/* Trending */
+.trending {
+  margin-top: 50px;
+}
+
+.trending-wrapper h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.trending .swiper {
+  width: 100%;
+  height: auto; /* 슬라이드 높이는 이미지에 맞춤 */
+  margin: 20px auto;
+}
+
+.trending .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* 자동 너비로 spaceBetween 적용 */
+}
+
+.trending .swiper-slide img {
+  height: auto; /* 비율 유지 */
+  object-fit: cover; /* 꽉 채우되 비율 유지 */
+  display: block;
+  border-radius: 10px;
+}
+
+.trend-info {
+  color: white;
+  font-family: "Noto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 8px;
+}
+
+.trend-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.trend-info span {
+  margin-left: 3px;
+}
+
+.trend-star {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.trend-star .star {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* Top Rated */
+.toprate {
+  margin-top: 50px;
+}
+
+.toprate-wrapper h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.toprate .swiper {
+  width: 100%;
+  height: auto; /* 슬라이드 높이는 이미지에 맞춤 */
+  margin: 20px auto;
+}
+
+.toprate .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* 자동 너비로 spaceBetween 적용 */
+}
+
+.toprate .swiper-slide img {
+  height: auto; /* 비율 유지 */
+  object-fit: cover; /* 꽉 채우되 비율 유지 */
+  display: block;
+  border-radius: 10px;
+}
+
+.toprated-info {
+  color: white;
+  font-family: "Noto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 8px;
+  padding: 0 10px;
+}
+
+.toprated-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.toprated-info span {
+  margin-left: 3px;
+}
+
+.toprated-star {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.toprated-star .star {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* Upcoming */
+.upcoming {
+  margin-top: 50px;
+}
+
+.upcoming-wrapper h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.upcoming .swiper {
+  width: 100%;
+  height: auto; /* 슬라이드 높이는 이미지에 맞춤 */
+  margin: 20px auto;
+}
+
+.upcoming .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto; /* 자동 너비로 spaceBetween 적용 */
+}
+
+.upcoming .swiper-slide img {
+  height: auto; /* 비율 유지 */
+  object-fit: cover; /* 꽉 채우되 비율 유지 */
+  display: block;
+  border-radius: 10px;
+}
+
+.come-poster img {
+  width: 100%;
+  background-color: red;
+}
+
+.come-info {
+  color: white;
+  font-family: "Noto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 8px;
+}
+
+.come-info h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.come-info span {
+  margin-left: 3px;
+}
+
+.come-star {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.come-star .star {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* footer */
+footer {
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+.footer-links a:focus {
+  outline: none;
+  color: #f39c12;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 872px) {
+  .header-wrapper .logo {
+    width: 186px;
+  }
+}
+
+@media (max-width: 791px) {
+  .header-wrapper .logo {
+    width: 50px;
+  }
+
+  .header-menu ul li {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-wrapper .logo {
+    width: 30px;
+  }
+  .header-menu ul li {
+    padding: 0.5rem 1rem;
+  }
+  .header-menu ul li a {
+    font-size: 15px;
+  }
+}
